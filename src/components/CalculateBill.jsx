@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CalculateBill({ selectedFriend, onHandleSplitBill }) {
+export default function CalculateBill({ selectedFriend, onSetSelectedFriend, onHandleSplitBill }) {
     const [bill, setBill] = useState("");
     const [yourExpense, setYourExpense] = useState("");
     const [whoIsPaying, setWhoIsPaying] = useState("user");
@@ -14,6 +14,7 @@ export default function CalculateBill({ selectedFriend, onHandleSplitBill }) {
         setBill("");
         setYourExpense("");
         setWhoIsPaying("user");
+        onSetSelectedFriend({});
     }
     return (
         <form className="form" onSubmit={handleBillSubmit}>
