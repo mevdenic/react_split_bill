@@ -57,6 +57,7 @@ export default function SplitBill() {
             </div>
             {Object.keys(selectedFriend).length ? (
                 <CalculateBill
+                    key={selectedFriend.id}
                     selectedFriend={selectedFriend}
                     onSetSelectedFriend={setSelectedFriend}
                     onHandleSplitBill={handleSplitBill}
